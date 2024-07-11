@@ -26,3 +26,10 @@ def count_words(filepath):
             for wrd in line.split():
                 count += 1
     return count
+
+def count_characters(filepath):
+    count = 0
+    with open(filepath, "r") as file:
+        for line in file:
+            count += len(line + "\n")
+    return count
