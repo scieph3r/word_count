@@ -9,14 +9,25 @@ def main():
     parser = argparse.ArgumentParser(description="my version of wc")
     # add arguments
     parser.add_argument("filepath", type=str, nargs="?", help="The file to be examined.")
+    parser.add_argument("-v", "--version", action="store_true", help="display program version.")
     parser.add_argument("-m", "--chars", action="store_true", help="count the number of characters in the file.")
     parser.add_argument("-w", "--words", action="store_true", help="count the number of words in the file.")
     parser.add_argument("-l", "--lines", action="store_true", help="count the number of lines in the file.")
     parser.add_argument("-c", "--bytes", action="store_true", help="count the number of bytes in the file.")
     # parse arguments
     args = parser.parse_args()
-    #unpack filepath
+    # unpack filepath
     file = args.filepath
+    # creation details
+    if args.version:
+        print("""
+word_count v1.0.0
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+written by: Scieph3r
+              """)
+        return 0
     # default state
     if args.filepath != None and len(argv) == 2:
         args.words = True
