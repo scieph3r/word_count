@@ -1,5 +1,5 @@
 def report(file, *details):
     for i in details:
-        if i != False:
+        if i:
             print(i, end=" ")
-    print(file)
+    if file != None: print(file)
